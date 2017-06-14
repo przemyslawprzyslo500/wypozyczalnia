@@ -34,8 +34,8 @@ public class Equipment implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "EQUIPMENT_ID")
-    private Integer equipmentId;
+    @Column(name = "ID")
+    private Integer id;
     
     @Size(max = 150)
     @Column(name = "NAME")
@@ -67,7 +67,7 @@ public class Equipment implements Serializable {
     @ManyToOne(optional = false)
     private LicenseType licenseTypeId;
     
-    @JoinColumn(name = "RESERVATION_RESERVATION_ID", referencedColumnName = "RESERVATION_ID")
+    @JoinColumn(name = "RESERV_ID", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Reserv reservationReservationId;
     
@@ -78,16 +78,16 @@ public class Equipment implements Serializable {
     public Equipment() {
     }
 
-    public Equipment(Integer equipmentId) {
-        this.equipmentId = equipmentId;
+    public Equipment(Integer id) {
+        this.id = id;
     }
 
     public Integer getEquipmentId() {
-        return equipmentId;
+        return id;
     }
 
-    public void setEquipmentId(Integer equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setEquipmentId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -173,7 +173,7 @@ public class Equipment implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (equipmentId != null ? equipmentId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -184,7 +184,7 @@ public class Equipment implements Serializable {
             return false;
         }
         Equipment other = (Equipment) object;
-        if ((this.equipmentId == null && other.equipmentId != null) || (this.equipmentId != null && !this.equipmentId.equals(other.equipmentId))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -192,7 +192,7 @@ public class Equipment implements Serializable {
 
     @Override
     public String toString() {
-        return "pl.turek.liceum.wypozyczalnia.model.Equipment[ equipmentId=" + equipmentId + " ]";
+        return "pl.turek.liceum.wypozyczalnia.model.Equipment[ id=" + id + " ]";
     }
     
 }

@@ -38,9 +38,11 @@ public class ReservStatus implements Serializable {
     @NotNull
     @Column(name = "ID")
     private Integer id;
+    
     @Size(max = 20)
     @Column(name = "RESERVATION_STATUS_NAME")
     private String reservationStatusName;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "reservStatusId")
     private Collection<Reserv> reservCollection;
 

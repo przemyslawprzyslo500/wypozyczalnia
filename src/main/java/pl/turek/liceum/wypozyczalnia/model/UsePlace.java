@@ -38,14 +38,18 @@ public class UsePlace implements Serializable {
     @NotNull
     @Column(name = "ID")
     private Integer id;
+    
     @Size(max = 16)
     @Column(name = "BUILDING")
     private String building;
+    
     @Column(name = "FLOOR")
     private Integer floor;
+    
     @Size(max = 255)
     @Column(name = "PLACE")
     private String place;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usePlaceId")
     private Collection<Equipment> equipmentCollection;
 

@@ -44,8 +44,8 @@ public class Reserv implements Serializable {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    @Column(name = "RESERVATION_ID")
-    private Integer reservationId;
+    @Column(name = "ID")
+    private Integer id;
     
     @Column(name = "RESERVATION_MADE_DATE")
     @Temporal(TemporalType.DATE)
@@ -98,16 +98,16 @@ public class Reserv implements Serializable {
     public Reserv() {
     }
 
-    public Reserv(Integer reservationId) {
-        this.reservationId = reservationId;
+    public Reserv(Integer id) {
+        this.id = id;
     }
 
     public Integer getReservationId() {
-        return reservationId;
+        return id;
     }
 
-    public void setReservationId(Integer reservationId) {
-        this.reservationId = reservationId;
+    public void setReservationId(Integer id) {
+        this.id = id;
     }
 
     public Date getReservationMadeDate() {
@@ -194,7 +194,7 @@ public class Reserv implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (reservationId != null ? reservationId.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -205,7 +205,7 @@ public class Reserv implements Serializable {
             return false;
         }
         Reserv other = (Reserv) object;
-        if ((this.reservationId == null && other.reservationId != null) || (this.reservationId != null && !this.reservationId.equals(other.reservationId))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -213,7 +213,7 @@ public class Reserv implements Serializable {
 
     @Override
     public String toString() {
-        return "pl.turek.liceum.wypozyczalnia.model.Reserv[ reservationId=" + reservationId + " ]";
+        return "pl.turek.liceum.wypozyczalnia.model.Reserv[ id=" + id + " ]";
     }
     
 }

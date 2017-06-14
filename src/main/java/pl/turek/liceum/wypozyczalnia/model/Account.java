@@ -39,8 +39,8 @@ public class Account implements Serializable {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    @Column(name = "ACCOUNTID")
-    private Integer accountid;
+    @Column(name = "ID")
+    private Integer id;
 
     @Size(max = 32)
     @Column(name = "LOGIN")
@@ -83,16 +83,16 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(Integer accountid) {
-        this.accountid = accountid;
+    public Account(Integer id) {
+        this.id = id;
     }
 
     public Integer getAccountid() {
-        return accountid;
+        return id;
     }
 
-    public void setAccountid(Integer accountid) {
-        this.accountid = accountid;
+    public void setAccountid(Integer id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -180,7 +180,7 @@ public class Account implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (accountid != null ? accountid.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -191,7 +191,7 @@ public class Account implements Serializable {
             return false;
         }
         Account other = (Account) object;
-        if ((this.accountid == null && other.accountid != null) || (this.accountid != null && !this.accountid.equals(other.accountid))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -199,7 +199,7 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "pl.turek.liceum.wypozyczalnia.model.Account[ accountid=" + accountid + " ]";
+        return "pl.turek.liceum.wypozyczalnia.model.Account[ id=" + id + " ]";
     }
 
 }
