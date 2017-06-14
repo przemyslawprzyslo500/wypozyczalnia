@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lepszy Projekt Lista</title>
+    </h:head>
+    <h:body>
+        <h1>Lepszy projekt - strona Lista</h1>
+        <h:form id="FormRejestruj">
+            <h:dataTable value="#{listaPageBean.konta}" var="konto">
+                <h:column>
+                    <f:facet name="header" >Login</f:facet>
+                    #{konto.login}
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Email</f:facet>
+                    #{konto.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Wiek</f:facet>
+                    #{konto.wiek}
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Aktywne</f:facet>
+                    <h:selectBooleanCheckbox value="#{konto.aktywne}" disabled="true" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header" >Akcje</f:facet>
+                    <h:commandButton value="Usuń" action="#{listaPageBean.usunKonto(konto)}" />
+                    <h:commandButton value="Dodaj F (trick!)" action="#{listaPageBean.dodajLosowaFaktureDoKlienta(konto)}" />
+                    <h:commandButton value="Edytuj" action="#{listaPageBean.edytujKonto(konto)}" />
+                    <h:commandButton value="Aktywuj" action="#{listaPageBean.aktywujKonto(konto)}" 
+                                rendered="#{not konto.aktywne}"/>
+                    <h:commandButton value="Dezaktywuj" action="#{listaPageBean.dezaktywujKonto(konto)}" 
+                                rendered="#{konto.aktywne}"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Anuluj" action="main" immediate="true"/>
+            <br />
+        </h:form>
+    </h:body>
+</html>
+

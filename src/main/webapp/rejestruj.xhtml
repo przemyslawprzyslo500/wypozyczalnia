@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Lepszy Projekt Rejestruj</title>
+    </h:head>
+    <h:body>
+        <h1>Lepszy projekt - strona Rejestruj</h1>
+        <h:form id="FormRejestruj">
+            Login: <h:inputText id="Login" value="#{rejestrujPageBean.konto.login}" required="true" /> 
+            <h:message for="Login" /><br />
+            Haslo: <h:inputSecret id="Haslo" value="#{rejestrujPageBean.konto.haslo}" /> 
+            <h:message for="Haslo" /><br />
+            Powtorz haslo: <h:inputSecret id="PowtorzHaslo" value="#{rejestrujPageBean.powtorzHaslo}" /> 
+            <h:message for="PowtorzHaslo" /><br />
+            Email: <h:inputText id="Email" value="#{rejestrujPageBean.konto.email}" /> 
+            <h:message for="Email" /><br />
+            Wiek: <h:inputText id="Wiek" value="#{rejestrujPageBean.konto.wiek}" /> 
+            <h:message for="Wiek" /><br />
+            <h:commandButton action="#{rejestrujPageBean.rejestruj()}" value="OK"/>
+            <h:commandButton value="Anuluj" action="main" immediate="true"/>
+            <br />
+            <h:messages layout="table" />
+        </h:form>
+    </h:body>
+</html>
+

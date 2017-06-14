@@ -1,0 +1,198 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pl.turek.liceum.wypozyczalnia.model;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author miszcz
+ */
+@Entity
+@Table(name = "EQUIPMENT")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Equipment.findAll", query = "SELECT e FROM Equipment e")})
+public class Equipment implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EQUIPMENT_ID")
+    private Integer equipmentId;
+    
+    @Size(max = 150)
+    @Column(name = "NAME")
+    private String name;
+    
+    @Size(max = 10)
+    @Column(name = "TYPE")
+    private String type;
+    
+    @Size(max = 10)
+    @Column(name = "STATUS")
+    private String status;
+    
+    @Column(name = "LICENSE_ID")
+    private Integer licenseId;
+    
+    @Size(max = 20)
+    @Column(name = "USE_PLACE")
+    private String usePlace;
+    
+    @Column(name = "RENT_PERMISSION")
+    private Character rentPermission;
+    
+    @JoinColumn(name = "EQUIPMENT_STATUS_ID", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private EquipmentStatus equipmentStatusId;
+    
+    @JoinColumn(name = "LICENSE_TYPE_ID", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private LicenseType licenseTypeId;
+    
+    @JoinColumn(name = "RESERVATION_RESERVATION_ID", referencedColumnName = "RESERVATION_ID")
+    @ManyToOne(optional = false)
+    private Reserv reservationReservationId;
+    
+    @JoinColumn(name = "USE_PLACE_ID", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private UsePlace usePlaceId;
+
+    public Equipment() {
+    }
+
+    public Equipment(Integer equipmentId) {
+        this.equipmentId = equipmentId;
+    }
+
+    public Integer getEquipmentId() {
+        return equipmentId;
+    }
+
+    public void setEquipmentId(Integer equipmentId) {
+        this.equipmentId = equipmentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Integer getLicenseId() {
+        return licenseId;
+    }
+
+    public void setLicenseId(Integer licenseId) {
+        this.licenseId = licenseId;
+    }
+
+    public String getUsePlace() {
+        return usePlace;
+    }
+
+    public void setUsePlace(String usePlace) {
+        this.usePlace = usePlace;
+    }
+
+    public Character getRentPermission() {
+        return rentPermission;
+    }
+
+    public void setRentPermission(Character rentPermission) {
+        this.rentPermission = rentPermission;
+    }
+
+    public EquipmentStatus getEquipmentStatusId() {
+        return equipmentStatusId;
+    }
+
+    public void setEquipmentStatusId(EquipmentStatus equipmentStatusId) {
+        this.equipmentStatusId = equipmentStatusId;
+    }
+
+    public LicenseType getLicenseTypeId() {
+        return licenseTypeId;
+    }
+
+    public void setLicenseTypeId(LicenseType licenseTypeId) {
+        this.licenseTypeId = licenseTypeId;
+    }
+
+    public Reserv getReservationReservationId() {
+        return reservationReservationId;
+    }
+
+    public void setReservationReservationId(Reserv reservationReservationId) {
+        this.reservationReservationId = reservationReservationId;
+    }
+
+    public UsePlace getUsePlaceId() {
+        return usePlaceId;
+    }
+
+    public void setUsePlaceId(UsePlace usePlaceId) {
+        this.usePlaceId = usePlaceId;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (equipmentId != null ? equipmentId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Equipment)) {
+            return false;
+        }
+        Equipment other = (Equipment) object;
+        if ((this.equipmentId == null && other.equipmentId != null) || (this.equipmentId != null && !this.equipmentId.equals(other.equipmentId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "pl.turek.liceum.wypozyczalnia.model.Equipment[ equipmentId=" + equipmentId + " ]";
+    }
+    
+}

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Lepszy Projekt Rejestruj-Potwierdź</title>
+    </h:head>
+    <h:body>
+        <h1>Lepszy projekt - strona Rejestruj-Potwierdź</h1>
+        <h:form id="FormRejestruj">
+            Login: <h:outputText id="Login" value="#{rejestrujPotwierdzPageBean.konto.login}" /> <br />
+            Email: <h:outputText id="Email" value="#{rejestrujPotwierdzPageBean.konto.email}" /> <br /> 
+            Wiek: <h:outputText id="Wiek" value="#{rejestrujPotwierdzPageBean.konto.wiek}" /> <br /> 
+            <h:commandButton action="#{rejestrujPotwierdzPageBean.rejestrujPotwierdz()}" value="OK"/>
+            <h:commandButton value="Anuluj" action="main" immediate="true"/>
+            <br />
+        </h:form>
+    </h:body>
+</html>
+

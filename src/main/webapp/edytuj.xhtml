@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Lepszy Projekt Edytuj</title>
+    </h:head>
+    <h:body>
+        <h1>Lepszy projekt - strona Edytuj</h1>
+        <h:form id="FormEdytuj">
+            Login: <h:outputText id="Login" value="#{edytujPageBean.konto.login}" /> 
+            <h:message for="Login" /><br />
+            Email: <h:inputText id="Email" value="#{edytujPageBean.konto.email}" /> 
+            <h:message for="Email" /><br />
+            Wiek: <h:inputText id="Wiek" value="#{edytujPageBean.konto.wiek}" /> 
+            <h:message for="Wiek" /><br />
+            <h:commandButton action="#{edytujPageBean.edytuj()}" value="OK"/>
+            <h:commandButton value="Anuluj" action="main" immediate="true"/>
+            <br />
+            <h:messages layout="table" />
+        </h:form>
+    </h:body>
+</html>
+
