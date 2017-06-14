@@ -45,9 +45,6 @@ public class Equipment implements Serializable {
     @Column(name = "TYPE")
     private String type;
     
-    @Column(name = "LICENSE_ID")
-    private Integer licenseId;
-    
     @Column(name = "RENT_PERMISSION")
     private Character rentPermission;
     
@@ -96,14 +93,6 @@ public class Equipment implements Serializable {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Integer getLicenseId() {
-        return licenseId;
-    }
-
-    public void setLicenseId(Integer licenseId) {
-        this.licenseId = licenseId;
     }
 
     public Character getRentPermission() {
