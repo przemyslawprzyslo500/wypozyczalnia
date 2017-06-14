@@ -45,16 +45,8 @@ public class Equipment implements Serializable {
     @Column(name = "TYPE")
     private String type;
     
-    @Size(max = 10)
-    @Column(name = "STATUS")
-    private String status;
-    
     @Column(name = "LICENSE_ID")
     private Integer licenseId;
-    
-    @Size(max = 20)
-    @Column(name = "USE_PLACE")
-    private String usePlace;
     
     @Column(name = "RENT_PERMISSION")
     private Character rentPermission;
@@ -106,28 +98,12 @@ public class Equipment implements Serializable {
         this.type = type;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Integer getLicenseId() {
         return licenseId;
     }
 
     public void setLicenseId(Integer licenseId) {
         this.licenseId = licenseId;
-    }
-
-    public String getUsePlace() {
-        return usePlace;
-    }
-
-    public void setUsePlace(String usePlace) {
-        this.usePlace = usePlace;
     }
 
     public Character getRentPermission() {
