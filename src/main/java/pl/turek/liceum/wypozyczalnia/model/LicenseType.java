@@ -41,21 +41,23 @@ public class LicenseType implements Serializable {
     @NotNull
     @Column(name = "ID")
     private Integer id;
+    
     @Size(max = 100)
     @Column(name = "LICENSE_NAME")
     private String licenseName;
-    @Size(max = 100)
-    @Column(name = "LICENSE_TYPE")
-    private String licenseType;
+        
     @Size(max = 30)
     @Column(name = "LICENSE_SERIAL")
     private String licenseSerial;
+    
     @Column(name = "LICENSE_START")
     @Temporal(TemporalType.DATE)
     private Date licenseStart;
+    
     @Column(name = "LICENSE_END")
     @Temporal(TemporalType.DATE)
     private Date licenseEnd;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "licenseTypeId")
     private Collection<Equipment> equipmentCollection;
 
@@ -80,14 +82,6 @@ public class LicenseType implements Serializable {
 
     public void setLicenseName(String licenseName) {
         this.licenseName = licenseName;
-    }
-
-    public String getLicenseType() {
-        return licenseType;
-    }
-
-    public void setLicenseType(String licenseType) {
-        this.licenseType = licenseType;
     }
 
     public String getLicenseSerial() {

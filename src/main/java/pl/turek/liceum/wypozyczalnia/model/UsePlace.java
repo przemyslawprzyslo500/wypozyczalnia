@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "USE_PLACE")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "UsePlace.findAll", query = "SELECT u FROM UsePlace u")})
+@NamedQuery(name = "UsePlace.findAll", query = "SELECT u FROM UsePlace u")})
 public class UsePlace implements Serializable {
 
     private static final long serialVersionUID = 1L;

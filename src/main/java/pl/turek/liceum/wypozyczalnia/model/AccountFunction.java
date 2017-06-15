@@ -40,7 +40,8 @@ public class AccountFunction implements Serializable {
     @Size(max = 20)
     @Column(name = "FUNCTION_NAME")
     private String functionName;
-    @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ACCOUNTID")
+    
+    @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Account accountId;
 
