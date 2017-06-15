@@ -55,27 +55,9 @@ public class Reserv implements Serializable {
     @Column(name = "DESCRIPTION")
     private String description;
     
-    @Column(name = "EQUIPMENT_ID")
-    private Integer equipmentId;
-    
-////    @JoinColumn(name = "EQUIPMENT_STATUS_ID", referencedColumnName = "ID")
-////    @ManyToOne(optional = false)
-////    private EquipmentStatus equipmentStatusId;
-//    
-//    @JoinColumn(name = "WHO_RESERVED", referencedColumnName = "ACCOUNTID")
-//    @OneToOne(optional = false)
-//    private Account whoReserved;
-//    
-////    @Column(name = "WHO_RESERVED")
-////    private Integer whoReserved;
-//    
-//    @JoinColumn(name = "WHO_ACCEPT_RESERVATION", referencedColumnName = "ACCOUNTID")
-//    @OneToOne(optional = false)
-//    private Account whoAcceptReservation;
-//    
-////    @Column(name = "WHO_ACCEPT_RESERVATION")
-////    private Integer whoAcceptReservation;
-    
+//    @Column(name = "EQUIPMENT_ID")
+//    private Integer equipmentId;
+       
     @Column(name = "RESERVATION_START")
     @Temporal(TemporalType.DATE)
     private Date reservationStart;
@@ -126,13 +108,13 @@ public class Reserv implements Serializable {
         this.description = description;
     }
 
-    public Integer getEquipmentId() {
-        return equipmentId;
-    }
+//    public Integer getEquipmentId() {
+//        return equipmentId;
+//    }
 
-    public void setEquipmentId(Integer equipmentId) {
-        this.equipmentId = equipmentId;
-    }
+//    public void setEquipmentId(Integer equipmentId) {
+//        this.equipmentId = equipmentId;
+//    }
 
 //    public Account getWhoReserved() {
 //        return whoReserved;
