@@ -74,10 +74,10 @@ public class Account implements Serializable {
     @Column(name = "ACTIVE")
     private Character active;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountAccountid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
     private Collection<AccountFunction> accountFunctionCollection;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountAccountid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
     private Collection<Reserv> reservCollection;
 
     public Account() {

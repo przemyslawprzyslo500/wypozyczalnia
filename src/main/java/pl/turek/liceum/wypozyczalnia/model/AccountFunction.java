@@ -42,7 +42,7 @@ public class AccountFunction implements Serializable {
     private String functionName;
     @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ACCOUNTID")
     @ManyToOne(optional = false)
-    private Account accountAccountid;
+    private Account accountId;
 
     public AccountFunction() {
     }
@@ -68,11 +68,11 @@ public class AccountFunction implements Serializable {
     }
 
     public Account getAccountAccountid() {
-        return accountAccountid;
+        return accountId;
     }
 
-    public void setAccountAccountid(Account accountAccountid) {
-        this.accountAccountid = accountAccountid;
+    public void setAccountAccountid(Account accountId) {
+        this.accountId = accountId;
     }
 
     @Override

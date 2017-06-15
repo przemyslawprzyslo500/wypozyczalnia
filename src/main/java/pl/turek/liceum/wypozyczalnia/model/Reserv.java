@@ -87,9 +87,9 @@ public class Reserv implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "reservationReservationId")
     private Collection<Equipment> equipmentCollection;
     
-    @JoinColumn(name = "ACCOUNT_ACCOUNTID", referencedColumnName = "ACCOUNTID")
+    @JoinColumn(name = "ACCOUNT_ID", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Account accountAccountid;
+    private Account accountId;
     
     @JoinColumn(name = "RESERV_STATUS_ID", referencedColumnName = "ID")
     @ManyToOne(optional = false)
@@ -176,11 +176,11 @@ public class Reserv implements Serializable {
     }
 
     public Account getAccountAccountid() {
-        return accountAccountid;
+        return accountId;
     }
 
-    public void setAccountAccountid(Account accountAccountid) {
-        this.accountAccountid = accountAccountid;
+    public void setAccountAccountid(Account accountId) {
+        this.accountId = accountId;
     }
 
     public ReservStatus getReservStatusId() {
